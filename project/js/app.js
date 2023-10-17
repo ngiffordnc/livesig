@@ -82,7 +82,7 @@ undoButton.addEventListener("click", function (event) {
 });
 
 // Add a submit event listener to the form
-var form = document.getElementById("sigForm");
+/*var form = document.getElementById("sigForm");
 
 form.addEventListener("submit", function (event) {
     // Prevent the default form submission behavior
@@ -100,3 +100,4 @@ form.addEventListener("submit", function (event) {
         form.submit();
     }
 });
+*/
