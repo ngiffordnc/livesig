@@ -86,7 +86,7 @@ function checkFormAndButton() {
   console.log("Button: ", submitButton);
   const forms = document.querySelectorAll('form.hs-form');
 
-  if (forms.length > 0 && submitButton) {
+  //if (forms.length > 0 && submitButton) {
     const sigForm = forms[0];
     console.log('Form found:', sigForm);
 
@@ -119,10 +119,10 @@ function checkFormAndButton() {
         submitButton.disabled = true;
       }
     };
-  } else {
+  //} else {
     // The form and button are not found, so check again in 1000 milliseconds (1 second)
-    setTimeout(checkFormAndButton, 1000);
-  }
+    //setTimeout(checkFormAndButton, 1000);
+  //}
 }
 
 // Start the initial check

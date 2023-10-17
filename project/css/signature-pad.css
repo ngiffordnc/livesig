@@ -52,6 +52,7 @@ body {
   border-radius: 4px;
   padding: 16px;
   margin: 20px 0;
+  top: -360px;
 }
 
 .signature-pad::before,
@@ -116,6 +117,10 @@ canvas {
 
 #github img {
   border: 0;
+}
+
+.hs-submit, .hs_submit {
+  margin-top: 310px;
 }
 
 @media (max-width: 940px) {
