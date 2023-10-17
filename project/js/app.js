@@ -86,7 +86,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Assuming "signaturePad" is the SignaturePad instance from your app.js
 
   const submitButton = document.querySelector('input[type="submit"]');
+  console.log("Submit: ", submitButton);
   const forms = document.querySelectorAll('form[id^="hsForm_"]');
+  console.log("Form #: ", forms.length);
 
   if (forms.length > 0) {
     const sigForm = forms[0];
