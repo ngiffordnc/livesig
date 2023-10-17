@@ -81,6 +81,51 @@ undoButton.addEventListener("click", function (event) {
   }
 });
 
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Assuming "signaturePad" is the SignaturePad instance from your app.js
+
+  const submitButton = document.querySelector('input.hs-button[type="submit"]');
+  const forms = document.querySelectorAll('form[id^="hsForm_"]');
+
+  if (forms.length > 0) {
+    const sigForm = forms[0];
+    console.log('Form found:', sigForm);
+  } else {
+    console.log('No form with an ID starting with "hsForm" found.');
+  }
+
+  // Add an event listener to the form submit button
+  submitButton.addEventListener("click", function (event) {
+    // Check if the signature pad is empty
+    if (signaturePad.isEmpty()) {
+      // Prevent form submission if the signature pad is empty
+      event.preventDefault();
+      alert("Please provide a signature first.");
+    } else {
+      // Perform the "save-png" action
+      var dataURL = signaturePad.toDataURL();
+      download(dataURL, "signature.png");
+
+      // After saving, you can allow the form to submit
+      sigForm.submit();
+    }
+  });
+
+  // Add a listener to enable or disable the submit button based on the signature's status
+  signaturePad.onBegin = function () {
+    // Enable the submit button when the user starts drawing a signature
+    submitButton.disabled = false;
+  };
+
+  signaturePad.onEnd = function () {
+    // Check if the signature pad is empty when the user finishes drawing
+    if (signaturePad.isEmpty()) {
+      submitButton.disabled = true;
+    }
+  };
+});
+
 // Add a submit event listener to the form
 /*var form = document.getElementById("sigForm");
 
