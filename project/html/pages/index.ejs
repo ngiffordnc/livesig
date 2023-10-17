@@ -19,25 +19,17 @@
 
     <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
     <script>
+      /*
       hbspt.forms.create({
         region: "na1",
         portalId: "44060182",
         formId: "9b461b2d-c16f-4316-991b-85f7441f0005"
       });
-/*
-      // Find the div element with the class "hs-submit"
-      const submitButton = document.querySelector('input.hs-button[type="submit"]');
-
-      if (submitButton) {
-        submitButton.id = 'submit-button';
-      } else {
-        console.log('Input with class "hs-button" not found.');
-      }
       */
 
     </script>
 
-    <!--form id="sigForm" action="/confirm" method="post">
+    <form id="sigForm" action="/confirm" method="post">
       <div class="field-2col">
         <label for="name">First Name:</label>
         <input type="text" id="firstname" name="firstname" required>
@@ -71,7 +63,7 @@
       </div>
 
       <input type="submit" value="Submit" data-action="save-png">
-    </form-->
+    </form>
 
     <div id="signature-pad" class="signature-pad">
       <div class="signature-pad--body">
@@ -94,53 +86,6 @@
 
   <script src="js/signature_pad.js"></script>
   <script src="js/app.js"></script>
-  <script>
-    /*
-    document.addEventListener("DOMContentLoaded", function () {
-      // Assuming "signaturePad" is the SignaturePad instance from your app.js
-  
-      const submitButton = document.querySelector('input.hs-button[type="submit"]');
-      const forms = document.querySelectorAll('form[id^="hsForm_"]');
-
-      if (forms.length > 0) {
-        const sigForm = forms[0];
-        console.log('Form found:', sigForm);
-      } else {
-        console.log('No form with an ID starting with "hsForm" found.');
-      }
-  
-      // Add an event listener to the form submit button
-      submitButton.addEventListener("click", function (event) {
-        // Check if the signature pad is empty
-        if (signaturePad.isEmpty()) {
-          // Prevent form submission if the signature pad is empty
-          event.preventDefault();
-          alert("Please provide a signature first.");
-        } else {
-          // Perform the "save-png" action
-          var dataURL = signaturePad.toDataURL();
-          download(dataURL, "signature.png");
-
-          // After saving, you can allow the form to submit
-          sigForm.submit();
-        }
-      });
-  
-      // Add a listener to enable or disable the submit button based on the signature's status
-      signaturePad.onBegin = function () {
-        // Enable the submit button when the user starts drawing a signature
-        submitButton.disabled = false;
-      };
-  
-      signaturePad.onEnd = function () {
-        // Check if the signature pad is empty when the user finishes drawing
-        if (signaturePad.isEmpty()) {
-          submitButton.disabled = true;
-        }
-      };
-    });
-    */
-  </script>
 </body>
 
 </html>

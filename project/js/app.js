@@ -81,49 +81,22 @@ undoButton.addEventListener("click", function (event) {
   }
 });
 
-function checkFormAndButton() {
-  const submitButton = document.querySelector('input.hs-button[type="submit"]');
-  console.log("Button: ", submitButton);
-  const forms = document.querySelectorAll('form.hs-form');
+// Add a submit event listener to the form
+var form = document.getElementById("sigForm");
 
-  //if (forms.length > 0 && submitButton) {
-    const sigForm = forms[0];
-    console.log('Form found:', sigForm);
+form.addEventListener("submit", function (event) {
+    // Prevent the default form submission behavior
+    event.preventDefault();
 
-    // Add an event listener to the form submit button
-    submitButton.addEventListener("click", function (event) {
-      // Check if the signature pad is empty
-      if (signaturePad.isEmpty()) {
-        // Prevent form submission if the signature pad is empty
-        event.preventDefault();
+    // Check if the signature is empty
+    if (signaturePad.isEmpty()) {
         alert("Please provide a signature first.");
-      } else {
+    } else {
         // Perform the "save-png" action
         var dataURL = signaturePad.toDataURL();
         download(dataURL, "signature.png");
 
         // After saving, you can allow the form to submit
-        sigForm.submit();
-      }
-    });
-
-    // Add a listener to enable or disable the submit button based on the signature's status
-    signaturePad.onBegin = function () {
-      // Enable the submit button when the user starts drawing a signature
-      submitButton.disabled = false;
-    };
-
-    signaturePad.onEnd = function () {
-      // Check if the signature pad is empty when the user finishes drawing
-      if (signaturePad.isEmpty()) {
-        submitButton.disabled = true;
-      }
-    };
-  //} else {
-    // The form and button are not found, so check again in 1000 milliseconds (1 second)
-    //setTimeout(checkFormAndButton, 1000);
-  //}
-}
-
-// Start the initial check
-checkFormAndButton();
+        form.submit();
+    }
+});
