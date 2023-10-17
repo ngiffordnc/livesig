@@ -87,7 +87,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const submitButton = document.querySelector('input[type="submit"]');
   console.log("Submit: ", submitButton);
-  const forms = document.querySelectorAll('form[id^="hsForm_"]');
+  //const forms = document.querySelectorAll('form[id^="hsForm_"]');
+  const forms = document.querySelectorAll('form');
   console.log("Form #: ", forms.length);
 
   if (forms.length > 0) {
@@ -128,23 +129,48 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 });
 
-// Add a submit event listener to the form
-/*var form = document.getElementById("sigForm");
+function checkFormAndButton() {
+  const submitButton = document.querySelector('input.hs-button[type="submit"]');
+  const forms = document.querySelectorAll('form.hs-form');
 
-form.addEventListener("submit", function (event) {
-    // Prevent the default form submission behavior
-    event.preventDefault();
+  if (forms.length > 0 && submitButton) {
+    const sigForm = forms[0];
+    console.log('Form found:', sigForm);
 
-    // Check if the signature is empty
-    if (signaturePad.isEmpty()) {
+    // Add an event listener to the form submit button
+    submitButton.addEventListener("click", function (event) {
+      // Check if the signature pad is empty
+      if (signaturePad.isEmpty()) {
+        // Prevent form submission if the signature pad is empty
+        event.preventDefault();
         alert("Please provide a signature first.");
-    } else {
+      } else {
         // Perform the "save-png" action
         var dataURL = signaturePad.toDataURL();
         download(dataURL, "signature.png");
 
         // After saving, you can allow the form to submit
-        form.submit();
-    }
-});
-*/
+        sigForm.submit();
+      }
+    });
+
+    // Add a listener to enable or disable the submit button based on the signature's status
+    signaturePad.onBegin = function () {
+      // Enable the submit button when the user starts drawing a signature
+      submitButton.disabled = false;
+    };
+
+    signaturePad.onEnd = function () {
+      // Check if the signature pad is empty when the user finishes drawing
+      if (signaturePad.isEmpty()) {
+        submitButton.disabled = true;
+      }
+    };
+  } else {
+    // The form and button are not found, so check again in 1000 milliseconds (1 second)
+    setTimeout(checkFormAndButton, 1000);
+  }
+}
+
+// Start the initial check
+checkFormAndButton();
