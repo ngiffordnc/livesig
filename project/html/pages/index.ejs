@@ -15,9 +15,18 @@
 
 <body onselectstart="return false">
   <div class="body-wrapper">
-    <h1>Demo Form with Signature</h1>
+    <h1>Embedded HubSpot Form with Signature</h1>
 
-    <form id="sigForm" action="/confirm" method="post">
+    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+    <script>
+      hbspt.forms.create({
+        region: "na1",
+        portalId: "44060182",
+        formId: "9b461b2d-c16f-4316-991b-85f7441f0005"
+      });
+    </script>
+
+    <!--form id="sigForm" action="/confirm" method="post">
       <div class="field-2col">
         <label for="name">First Name:</label>
         <input type="text" id="firstname" name="firstname" required>
@@ -46,15 +55,30 @@
               <button type="button" class="button" data-action="undo">Undo</button>
   
             </div>
-            <div>
-              <!--button type="button" class="button save" data-action="save-png">Save as PNG</button-->
-            </div>
           </div>
         </div>
       </div>
 
       <input type="submit" value="Submit" data-action="save-png">
-    </form>
+    </form-->
+
+    <div id="signature-pad" class="signature-pad">
+      <div class="signature-pad--body">
+        <canvas></canvas>
+      </div>
+      <div class="signature-pad--footer">
+        <div class="description">Sign above</div>
+
+        <div class="signature-pad--actions">
+          <div>
+            <button type="button" class="button clear" data-action="clear">Clear</button>
+            <button type="button" class="button" data-action="undo">Undo</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <script src="js/signature_pad.js"></script>
