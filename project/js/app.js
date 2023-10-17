@@ -85,7 +85,7 @@ undoButton.addEventListener("click", function (event) {
 document.addEventListener("DOMContentLoaded", function () {
   // Assuming "signaturePad" is the SignaturePad instance from your app.js
 
-  const submitButton = document.querySelector('input.hs-button[type="submit"]');
+  const submitButton = document.querySelector('input[type="submit"]');
   const forms = document.querySelectorAll('form[id^="hsForm_"]');
 
   if (forms.length > 0) {
