@@ -1,0 +1,54 @@
+<%- const getTokenApiDetails = ' Get OAuth 2.0 Access Token and Refresh Tokens\n POST /oauth/v1/token\n oauth.defaultApi.createToken' %>
+<%- const getContactsApiDetails = ' Get all companies\n GET /crm/v3/objects/contacts\n crm.contacts.basicApi.getPage' %>
+
+<div class="container">
+  <h3>Tokens</h3>
+  <pre><%= getTokenApiDetails %></pre>
+  <table class="tokens-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Access Token</td>
+        <td><%= tokenStore.accessToken || '' %></td>
+      </tr>
+      <tr>
+        <td>Refresh Token</td>
+        <td><%= tokenStore.refreshToken || '' %></td>
+      </tr>
+      <tr>
+        <td>Expires In</td>
+        <td><%= tokenStore.expiresIn || '' %></td>
+      </tr>
+      <tr>
+        <td>Updated At</td>
+        <td><%= tokenStore.updatedAt ? new Date(tokenStore.updatedAt) : '' %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Contacts</h3>
+  <pre><%= getContactsApiDetails %></pre>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Company</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% contacts.forEach(function(contact) { %>
+        <tr>
+          <td><%= contact.id %></td>
+          <td><%= contact.name %></td>
+          <td><%= contact.companyName %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</div>
