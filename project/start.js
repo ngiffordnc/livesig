@@ -9,7 +9,7 @@ const PORT = 3000;
 const OBJECTS_LIMIT = 30;
 const CLIENT_ID = process.env.HUBSPOT_CLIENT_ID;
 const CLIENT_SECRET = process.env.HUBSPOT_CLIENT_SECRET;
-const SCOPES = 'content,timeline,forms,files,forms-uploaded-files,crm.objects.contacts.read,crm.objects.contacts.write';
+const SCOPES = 'crm.objects.contacts.read';
 const REDIRECT_URI = `https://mysterious-cliffs-67620-96cb760c65eb.herokuapp.com`;
 const GRANT_TYPES = {
   AUTHORIZATION_CODE: 'authorization_code',
