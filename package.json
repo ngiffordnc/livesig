@@ -7,10 +7,7 @@
   "description": "hubspot-node client sample applications",
   "main": "src/index.js",
   "scripts": {
-    "start": "node --trace-deprecation project/start.js",
-    "dev": "nodemon src/index.js",
-    "lint": "eslint . && prettier --list-different './**/*.{js,json}'",
-    "prettier:write": "prettier --write './**/*.{js,json}'"
+    "start": "node --trace-deprecation project/start.js"
   },
   "keywords": [
     "hubspot",
@@ -35,6 +32,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/HubSpot/sample-apps-oauth.git"
+    "url": "https://github.com/ngiffordnc/livesig.git"
   }
 }
