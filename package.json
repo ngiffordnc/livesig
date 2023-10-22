@@ -1,11 +1,11 @@
 {
-  "name": "hubspot-oauth",
-  "version": "2.0.0",
+  "name": "livesig",
+  "version": "1.0.0",
   "engines": {
-    "node": ">= 10.13.0"
+    "node": "8.9.1"
   },
   "description": "hubspot-node client sample applications",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "start": "node --trace-deprecation project/start.js"
   },
@@ -22,13 +22,14 @@
     "@hubspot/api-client": "^9.1.1",
     "body-parser": "^1.20.2",
     "dotenv": "^16.3.1",
-    "express": "^4.18.2",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "eslint": "^8.47.0",
-    "nodemon": "^3.0.1",
-    "prettier": "^3.0.2"
+    //"eslint": "^8.47.0",
+    //"nodemon": "^3.0.1",
+    //"prettier": "^3.0.2"
   },
   "repository": {
     "type": "git",
