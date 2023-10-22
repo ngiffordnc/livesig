@@ -5,7 +5,7 @@ const hubspot = require('@hubspot/api-client');
 const bodyParser = require('body-parser');
 require('./config');
 
-const PORT = 3000;
+//const PORT = 3000;
 const OBJECTS_LIMIT = 30;
 const CLIENT_ID = process.env.HUBSPOT_CLIENT_ID;
 const CLIENT_SECRET = process.env.HUBSPOT_CLIENT_SECRET;
@@ -208,7 +208,7 @@ app.use((error, req, res) => {
   res.render('error', { error: error.message });
 });
 
-app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
+//app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
 
 /*
 var app = express();
