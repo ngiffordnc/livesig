@@ -7,7 +7,7 @@
   "description": "hubspot-node client sample applications",
   "main": "index.js",
   "scripts": {
-    "start": "node --trace-deprecation project/start.js"
+    "start": "node project/start.js"
   },
   "keywords": [
     "hubspot",
