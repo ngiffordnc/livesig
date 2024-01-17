@@ -1,6 +1,6 @@
 {
-  "name": "Build Your First Webapp",
-  "description": "A barebones Node.js app using Express 4",
+  "name": "Sign2PDF",
+  "description": "HubSpot app allowing you to take a live onscreen signature with a form and then generate a PDF of the end result.",
   "repository": "",
   "logo": "",
   "keywords": ["node", "express", "static"],

@@ -1,20 +1,20 @@
 {
-  "name": "livesig",
+  "name": "sign2pdf",
   "version": "1.0.0",
   "engines": {
     "node": "8.9.1"
   },
-  "description": "hubspot-node client sample applications",
+  "description": "HubSpot app allowing you to take a live onscreen signature with a form and then generate a PDF of the end result",
   "main": "index.js",
   "scripts": {
     "start": "node project/start.js"
   },
   "keywords": [
     "hubspot",
-    "oauth",
-    "contacts",
-    "sample",
-    "example"
+    "forms",
+    "signing",
+    "signature",
+    "pdf"
   ],
   "author": "hubspot",
   "license": "Apache-2.0",
@@ -33,6 +33,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ngiffordnc/livesig.git"
+    "url": "https://github.com/ngiffordnc/sign2pdf.git"
   }
 }
