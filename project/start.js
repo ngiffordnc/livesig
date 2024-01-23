@@ -10,7 +10,7 @@ const OBJECTS_LIMIT = 30;
 const CLIENT_ID = process.env.HUBSPOT_CLIENT_ID;
 const CLIENT_SECRET = process.env.HUBSPOT_CLIENT_SECRET;
 const SCOPES = 'crm.objects.contacts.read,forms';
-const REDIRECT_URI = `https://mysterious-cliffs-67620-96cb760c65eb.herokuapp.com`;
+const REDIRECT_URI = `https://sign2pdf-274b2980e57b.herokuapp.com/`;
 const GRANT_TYPES = {
   AUTHORIZATION_CODE: 'authorization_code',
   REFRESH_TOKEN: 'refresh_token',
@@ -207,27 +207,3 @@ app.get('/error', (req, res) => {
 app.use((error, req, res) => {
   res.render('error', { error: error.message });
 });
-
-//app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
-
-/*
-var app = express();
-
-app.set('port', (process.env.PORT || 5000));
-app.use(express.static(__dirname));
-
-// views is directory for all template files
-app.set('views', __dirname + '/html');
-app.set('view engine', 'ejs');
-
-app.get('/', function(request, response) {
-  response.render('pages/index');
-});
-
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
-});
-*/
-
-// This file is what handles incoming requests and
-// serves files to the browser, or executes server-side code
